@@ -4,7 +4,7 @@
          $clases = $active ?? false ? 'nav-link active' : 'nav-link';
      @endphp
      <li class="nav-item">
-         <a {{ $attributes->merge(['class' => $clases]) }}>
+         <a wire:navigate {{ $attributes->merge(['class' => $clases]) }}>
              {{ $slot }}
          </a>
      </li>
