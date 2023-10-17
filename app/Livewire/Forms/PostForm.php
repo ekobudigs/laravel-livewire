@@ -20,7 +20,7 @@ class PostForm extends Form
 
 
         $user->posts()->create($this->validate());
-        flash('Post Created', 'success');
+        flash('Post Created', 'warning');
         $this->reset();
     }
 }
