@@ -8,7 +8,7 @@ use Livewire\Attributes\Rule;
 
 class PostForm extends Form
 {
-    #[Rule(['required'])]
+    #[Rule(['required', 'string', 'min:3', 'max:255'])]
     public string $title = '';
 
     #[Rule(['required'])]
