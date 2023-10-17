@@ -1,10 +1,7 @@
 <div>
 
-    @if (flash()->message)
-        <div class="alert alert-{{ flash()->class }}" role="alert">
-            {{ flash()->message }}
-        </div>
-    @endif
+    <x-flash-message />
+
     <div class="card">
 
         <div class="card-body">
