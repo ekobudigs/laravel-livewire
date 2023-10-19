@@ -15,7 +15,7 @@
 
     <main class="py-4">
         <div class="container">
-            <div class="row">
+            <div class="row min-vh-100 justify-content-center">
                 <div class="col-md-4">
                     {{ $slot }}
                 </div>
