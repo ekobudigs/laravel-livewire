@@ -2,31 +2,20 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Forms\LoginForm;
+use Illuminate\Http\RedirectResponse;
 use Livewire\Component;
-use Livewire\Attributes\Rule;
 use Livewire\Attributes\Layout;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\ValidationException;
 
 class Login extends Component
 {
     #[Layout('layouts.guest')]
 
-    #[Rule('required', 'email')]
-    public string $email = '';
+    public LoginForm $form;
 
-    #[Rule('required')]
-    public string $password = '';
     public function login()
     {
-
-        if (Auth::attempt($this->validate())) {
-            return redirect()->route('home');
-        }
-
-        throw ValidationException::withMessages([
-            'email' => 'Ine ne provided credentials do not match our records.',
-        ]);
+        $this->form->store();
     }
     public function render()
     {
