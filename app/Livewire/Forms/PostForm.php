@@ -4,6 +4,7 @@ namespace App\Livewire\Forms;
 
 use Livewire\Form;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Rule;
 
 class PostForm extends Form
@@ -14,12 +15,12 @@ class PostForm extends Form
     #[Rule(['required'])]
     public string $body = '';
 
-    public function store()
+    public function store(): void
     {
-        $user = User::find(1);
 
 
-        $user->posts()->create($this->validate());
+
+        Auth::user()->posts()->create($this->validate());
         flash('Post Created', 'warning');
         $this->reset();
     }
