@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LogoutController;
 use App\Livewire\Home;
 use App\Livewire\About;
 use App\Livewire\Login;
@@ -32,3 +33,5 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/login', Login::class)->name('login')->middleware('guest');
+
+Route::post('logout', LogoutController::class)->name('logout');
