@@ -12,13 +12,15 @@ class PostFormNew extends Form
     #[Rule(['required'])]
     public string $body = '';
 
-    public function store(): void
+    public function store()
     {
 
 
 
-        Auth::user()->posts()->create($this->validate());
+        $post =  Auth::user()->posts()->create($this->validate());
         flash('Post Created', 'warning');
         $this->reset();
+
+        return $post;
     }
 }
