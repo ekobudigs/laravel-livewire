@@ -14,6 +14,7 @@
                 <x-nav-link :active="request()->routeIs('about')" href="/about">About </x-nav-link>
                 <x-nav-link :active="request()->routeIs('contact')" href="/contact">Contact </x-nav-link>
                 <x-nav-link :active="request()->routeIs('posts.*')" href="/posts">Posts </x-nav-link>
+                <x-nav-link :active="request()->routeIs('timline.*')" href="/timline">timline </x-nav-link>
 
 
             </ul>
