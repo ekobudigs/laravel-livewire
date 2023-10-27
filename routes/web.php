@@ -9,6 +9,7 @@ use App\Livewire\Users\Show;
 use App\Livewire\Posts\Index;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NotifyLaravelController;
+use App\Livewire\Timline;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/about', About::class)->name('about');
     Route::get('/contact', Contact::class)->name('contact');
     Route::get('/posts', Index::class)->name('posts.index');
+    Route::get('/timline', Timline::class)->name('timline');
 
 
     Route::get('/users/{user}', Show::class)->name('users.name');
