@@ -11,7 +11,9 @@ class PostNew extends Component
 
     public function save()
     {
-        $this->form->store();
+        $post =  $this->form->store();
+
+        $this->dispatch('postCreated', $post->id);
     }
     public function render()
     {
