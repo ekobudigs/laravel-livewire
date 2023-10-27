@@ -24,7 +24,7 @@ class Index extends Component
         return view(
             'livewire.posts.index',
             [
-                'posts' => Post::query()->latest()->get()
+                'posts' => Post::query()->with('user')->latest()->get()
             ]
         );
     }
