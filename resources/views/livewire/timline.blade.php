@@ -8,7 +8,7 @@
 
         <div class="col-md-6">
          
-          <livewire:posts.index lazy />
+          <livewire:posts.index :lazy="false" />
         </div>
     </div>
 </div>
