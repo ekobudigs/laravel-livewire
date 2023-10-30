@@ -3,14 +3,16 @@
 namespace App\Livewire\Posts;
 
 use App\Models\Post;
+use Livewire\Attributes\Lazy;
 use Livewire\Component;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Title;
 
 
-#[Title('Posts')]
 
 
+
+#[Lazy]
 
 class Index extends Component
 {
@@ -19,8 +21,14 @@ class Index extends Component
     public function update($post)
     {
     }
+
+    public function placeholder()
+    {
+        return view('livewire.posts.placeholder');
+    }
     public function render()
     {
+        sleep(3);
         return view(
             'livewire.posts.index',
             [
