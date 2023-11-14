@@ -1,15 +1,16 @@
 <?php
 
-use App\Http\Controllers\LogoutController;
 use App\Livewire\Home;
 use App\Livewire\About;
 use App\Livewire\Login;
 use App\Livewire\Contact;
+use App\Livewire\Timline;
 use App\Livewire\Users\Show;
 use App\Livewire\Posts\Index;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LogoutController;
+use App\Livewire\Users\Index as UsersIndex;
 use App\Http\Controllers\NotifyLaravelController;
-use App\Livewire\Timline;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/posts', Index::class)->name('posts.index');
     Route::get('/timline', Timline::class)->name('timline');
 
-
+    Route::get('users', UsersIndex::class)->name('users.index');
     Route::get('/users/{user}', Show::class)->name('users.name');
 });
 
