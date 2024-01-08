@@ -20,5 +20,5 @@
         </tbody>
     </table>
 
-    {{ $users->links() }}
+    <x-pagination :items="$users" />
 </div>
