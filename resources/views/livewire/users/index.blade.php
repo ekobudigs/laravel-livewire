@@ -11,7 +11,7 @@
         <tbody>
             @foreach ($users as $user)
                 <tr wire:key="{{ $user->id }}">
-                    <th scope="row"> {{ $loop->index + 1 }} </th>
+                    <th scope="row"> {{ $loop->index + $users->firstItem() }} </th>
                     <td> {{ $user->name }} </td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->created_at->format('d F Y') }}</td>
