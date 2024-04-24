@@ -10,6 +10,9 @@
                 @error('form.email')
                     <small class="d-block mt-1 text-danger">{{ $message }}</small>
                 @enderror
+                @error('email')
+                <small class="d-block mt-1 text-danger">{{ $message }}</small>
+            @enderror
             </div>
 
             <div class="mb-4">

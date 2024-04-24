@@ -24,7 +24,7 @@ class LoginForm extends Form
         }
 
         throw ValidationException::withMessages([
-            'email' => 'Ine ne provided credentials do not match our records.',
+            'email' => 'Password Atau Email Salah',
         ]);
     }
 }
